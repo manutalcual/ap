@@ -144,7 +144,7 @@ void makeBody (std::string name, std::string author)
     header << "// Program: " << name << " Copyright (c) " 
 		   << (mytime->tm_year + 1900) << " " << FULL_NAME << "\n";
     header << "// Author: " << USER << "\n";
-    header << "// Date: " << ::ctime(&t) << "\n";
+    header << "// Date: " << ::ctime(&t);
     header << "// Time-stamp: <>\n";
 	header << "//\n";
 	header << "//   This program is free software; you can redistribute it and/or modify\n";
