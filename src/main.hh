@@ -80,7 +80,7 @@ const char * CONFIGURE_AC =
 	"dnl fi\n"															\
 	"\n"																\
 	"\n"																\
-	"dnl AM_CONDITIONAL(FEATURE, [test x\"$the_feature\" != x])"		\
+	"dnl AM_CONDITIONAL(FEATURE, [test x\"$the_feature\" != x])\n"		\
 	"dnl AC_DEFUN(AC_MSG_SUMMARY, [echo $1])\n"							\
 	"dnl AC_DEFUN(WITH,"												\
 	"dnl [\n"															\
