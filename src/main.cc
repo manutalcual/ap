@@ -64,10 +64,12 @@ int main (int argc, char ** argv)
 		{
 			mail = argv[++p];
 		}
+		/*
 		else if (equal("--gnome", argv[p]))
 		{
 			gnome = true;
 		}
+		*/
 		else if (equal("-h", argv[p]))
 		{
 			help = true;
@@ -98,10 +100,6 @@ int main (int argc, char ** argv)
     std::cout << "Creating project skeleton \"" 
 			  << project << "\"" << std::endl;
 	
-    if (! gnome)
-    {
-		std::cout << "\tProject without GNOME." << std::endl;
-    }
     autoproject ap (project, version, mail, author, gnome);
     makeBody (project, author);
 	
@@ -147,6 +145,7 @@ void makeBody (std::string name, std::string author)
 		   << (mytime->tm_year + 1900) << " " << FULL_NAME << "\n";
     header << "// Author: " << USER << "\n";
     header << "// Date: " << ::ctime(&t) << "\n";
+    header << "// Time-stamp: <>\n";
 	header << "//";
 	header << "//   This program is free software; you can redistribute it and/or modify";
 	header << "//   it under the terms of the GNU General Public License as published by";
@@ -174,7 +173,7 @@ void makeBody (std::string name, std::string author)
 		 << (mytime->tm_year + 1900) << " " << FULL_NAME << "\n";
     body << "// Author: " << USER << "\n";
     body << "// Date: " << ::ctime(&t);
-
+    body << "// Time-stamp: <>\n";
 	body << "//";
 	body << "//   This program is free software; you can redistribute it and/or modify";
 	body << "//   it under the terms of the GNU General Public License as published by";
@@ -191,7 +190,6 @@ void makeBody (std::string name, std::string author)
 	body << "//   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA";
 	body << "//   02110-1301	USA";
 	body << "//";
-
     body << "//\n";
     body << "// Includes\n";
     body << "//\n";
