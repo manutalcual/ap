@@ -108,12 +108,14 @@ const char * CONFIGURE_AC =
 	"AC_OUTPUT\n";
 
 const char * AUTORECONF = 
-"# !/bin/bash\n"
-"aclocal\n"
-"autoheader\n"
-"autoconf\n"
-"autoheader\n"
-"automake -c --add-missing\n";
+	"# !/bin/bash\n\n"
+	"srcdir=`dirname $0`\n"
+	"test -z \"$srcdir\" && srcdir=.\n\n"
+	"ORIGDIR=`pwd`\n"
+	"cd $srcdir\n\n"
+	"autoreconf --force -v --install || exit 1\n"
+	"cd $ORIGDIR || exit $?\n\n"
+	"$srcdir/configure --enable-maintainer-mode \"$@\"\n";
 
 const char * MAKEFILE_AM = "SUBDIRS = src\n";
 const char * SRC_MAKEFILE_AM = 
@@ -211,8 +213,8 @@ public:
 	  conf += "/configure.ac";
 	  makef += "/Makefile.am";
 	  srcmakef += "/src/Makefile.am";
-	  autorec += "/autoreconf.sh";
-		
+	  autorec += "/autogen.sh";
+
 	  file project (_name.c_str(), true);
 	  file src (srcdir.c_str(), true);
 	  file configure (conf.c_str());

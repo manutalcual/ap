@@ -1,0 +1,4 @@
+2010-01-01    <manuel@desarrollo.sisdetec.es>
+
+	* src/Makefile.am (INCLUDES): eliminated gnome parameters.
+
