@@ -1,4 +1,9 @@
 2010-01-01    <manuel@desarrollo.sisdetec.es>
 
+	* src/main.cc (makeBody): inserted 'Timestamp: <>' for emacs at
+	program header and body.y
+
+	* src/main.hh (a): changed creation script to 'autogen.sh'.
+
 	* src/Makefile.am (INCLUDES): eliminated gnome parameters.
 
