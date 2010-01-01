@@ -102,7 +102,7 @@ const char * CONFIGURE_AC =
 	"dnl AC_SUBST(CFLAGS)\n"											\
 	"dnl AC_SUBST(CPPFLAGS)\n"											\
 	"dnl AC_SUBST(LDFLAGS)\n"											\
-	"CFLAGS=\"-Wall -g $CFLAGS\n"										\
+	"CFLAGS=\"-Wall -g $CFLAGS\"\n"										\
 	"\n"																\
 	"AC_CONFIG_FILES([Makefile src/Makefile])\n"						\
 	"AC_OUTPUT\n";
