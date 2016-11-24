@@ -99,11 +99,11 @@ const char * CONFIGURE_AC =
 	"dnl\n"																\
 	"dnl Checks for library functions.\n"								\
 	"\n"																\
-	"dnl AC_SUBST(CFLAGS)\n"											\
 	"dnl AC_SUBST(CPPFLAGS)\n"											\
 	"dnl AC_SUBST(LDFLAGS)\n"											\
 	"CFLAGS=\"-Wall -g $CFLAGS\"\n"										\
 	"\n"																\
+	"AC_SUBST(CFLAGS)\n"												\
 	"AC_CONFIG_FILES([Makefile src/Makefile])\n"						\
 	"AC_OUTPUT\n";
 
